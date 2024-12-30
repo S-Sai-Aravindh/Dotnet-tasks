@@ -29,19 +29,52 @@ namespace StudentApp
         }
         
         List<string> fruits = new List<string>() { "Apple", "Banana", "Grapes" };
+        public string ConvertTitleCase(string input)
+        {
+            string[] words = input.Split(' ');
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (words[i].Length > 0)
+                {
+                    words[i] = char.ToUpper(words[i][0]) + words[i].Substring(1).ToLower();
+                }
+            }
+            return string.Join(" ", words);
+        }
         public void ShowArray()
         {
             Console.WriteLine("The array of fruits:");
             foreach (string s in fruits)
             {
-                Console.WriteLine(s);
+                Console.WriteLine(ConvertTitleCase(s));
             }
         }
 
         public void Addfruit(string fruit)
         {
-            fruits.Add(fruit);
-            Console.WriteLine($"Your array after adding : {fruit}");
+            
+            int pos = -1;
+
+            for (int i = 0; i < fruits.Count; i++)
+            {
+                if (fruits[i].Equals(fruit, StringComparison.OrdinalIgnoreCase))
+                {
+                    pos = i;
+                    break;
+                }
+            }
+
+            if (pos >= 0)
+            {
+                Console.WriteLine("Element is present");
+            }
+            else
+            {
+                fruits.Add(fruit);
+                Console.WriteLine($"Your array after adding : {fruit}");
+
+            }
             ShowArray();
         }
 
@@ -103,7 +136,7 @@ namespace StudentApp
             {
                 if(fruits[i].Equals(del, StringComparison.OrdinalIgnoreCase))
                 {
-                    fruits.Remove(del);
+                    fruits.RemoveAt(i);
                 }
                 else
                 {
