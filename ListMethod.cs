@@ -8,6 +8,7 @@ namespace StudentApp
 {
     internal class ListMethod
     {
+        CommonMethod cm = new CommonMethod();
         public void ListMethods() 
         {
             List<int> numbers = new List<int>() { 2, 40, 10, 15, 100, 74 };
@@ -80,11 +81,11 @@ namespace StudentApp
 
         public void UpdateFruit()
         {
-            Console.Write("Enter the fruit want to replace: ");
-            string rep = Console.ReadLine();
+            //Console.Write("Enter the fruit want to replace: ");
+            string rep = cm.UserInput("Enter the fruit want to replace: ");
             int count = 0;
-            Console.Write("Enter the fruit to add: ");
-            string nrep = Console.ReadLine();
+            //Console.Write("Enter the fruit to add: ");
+            string nrep = cm.UserInput("Enter the fruit to add: ");
 
             int pos = -1;
 
@@ -129,8 +130,8 @@ namespace StudentApp
 
         public void Deletefruit()
         {
-            Console.Write("Enter the fruit want to delete: ");
-            string del = Console.ReadLine();
+            //Console.Write("Enter the fruit want to delete: ");
+            string del = cm.UserInput("Enter the fruit want to delete: ");
             int count = 0;
             for (int i = 0;i< fruits.Count; i++)
             {
@@ -166,6 +167,7 @@ namespace StudentApp
             Console.WriteLine("5. Exit Menu");
             Console.Write("Enter your choice 1 - 5: ");
             int ch = Convert.ToInt32(Console.ReadLine());
+            
 
             switch (ch)
             {
@@ -174,8 +176,9 @@ namespace StudentApp
                     FruitsMenu();
                     break;
                 case 2:
-                    Console.Write("Enter the fruit you want to add: ");
-                    string fruit = Console.ReadLine();
+                    //Console.Write("Enter the fruit you want to add: ");
+                    //string fruit = Console.ReadLine();
+                    string fruit = cm.UserInput("Enter the fruit you want to add: ");
                     Addfruit(fruit);
                     FruitsMenu();
                     break;
