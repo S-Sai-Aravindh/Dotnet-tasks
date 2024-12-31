@@ -106,7 +106,7 @@
             //listMethod.ListMethods();
             listMethod.FruitsMenu();
 
-            Console.ReadKey();
+            //Console.ReadKey();
         }
     }
 }
