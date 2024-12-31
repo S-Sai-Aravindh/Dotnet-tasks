@@ -18,7 +18,7 @@ namespace demodotnet.DotnetProj1
     {
         public override string GetTotalAmount()
         {
-            return "Savings bal : " + TotalAmount;
+            return "Savings balance : " + TotalAmount;
         }
 
         public string branchAddress()
