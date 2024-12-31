@@ -10,7 +10,7 @@ namespace demodotnet.DotnetProj1
     {
         public int sid;
         public string sname;
-        public static string collegename = "Chennai IIT";
+        public static string collegename = "Chennai IIIT";
         public const int semester = 6;
 
         public Student(int sid, string sname)
