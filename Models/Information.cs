@@ -8,7 +8,7 @@
 
         public string License { get; set; }
 
-        public DateTime Established { get; set; }
+        public DateTime Establisheds { get; set; }
 
         public decimal Revenue { get; set; }
     }
